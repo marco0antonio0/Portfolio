@@ -33,16 +33,16 @@ export default function Home() {
     >
     <Head>
     <title>Portfolio de {nome ?? github_user} | Desenvolvedor Full Stack</title>
-    <meta name="description" content="Portfólio de {nome ?? github_user}, desenvolvedor apaixonado por tecnologia e inovação. Veja meus projetos e entre em contato." />
+    <meta name="description" content={`Portfólio de ${nome ?? github_user}, desenvolvedor apaixonado por tecnologia e inovação. Veja meus projetos e entre em contato.`} />
     <meta name="keywords" content="desenvolvimento web, full stack, programação, tecnologia, portfólio" />
-    <meta name="author" content="{nome ?? github_user}" />
-    <meta property="og:title" content="Portfolio de {nome ?? github_user}" />
-    <meta property="og:description" content="Portfólio de {nome ?? github_user}, desenvolvedor apaixonado por tecnologia e inovação." />
-    <meta property="og:image" content={"https://github.com/"+github_user+".png"} />
-    <meta property="og:url" content="https://seusite.com" />
-    <meta name="twitter:title" content="Portfolio de {nome ?? github_user}" />
+    <meta name="author" content={nome ?? github_user} />
+    <meta property="og:title" content={`Portfolio de ${nome ?? github_user}`} />
+    <meta property="og:description" content={`Portfólio de ${nome ?? github_user}, desenvolvedor apaixonado por tecnologia e inovação.`} />
+    <meta property="og:image" content="/banner.png" />
+    <meta property="og:url" content="http://portfolio.dirrocha.com" />
+    <meta name="twitter:title" content={`Portfolio de ${nome ?? github_user}`} />
     <meta name="twitter:description" content="Veja meus projetos e entre em contato." />
-    <meta name="twitter:image" content={"https://github.com/"+github_user+".png"}  />
+    <meta name="twitter:image" content="/banner.png"  />
     <meta name="twitter:card" content="summary_large_image" />
     </Head>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-[100%] max-w-[800px]">
@@ -88,10 +88,10 @@ export default function Home() {
         </div>
         {/* ===================================================================================================== */}
         <div className="w-[100%] h-[100%] rounded-lg flex flex-col items-center justify-center text-white select-none cursor-pointer  bg-[#18181B] border-2 border-gray-800"
-        onClick={()=>{r.push(link_linkedln)}}>
+        onClick={()=>{r.push("https://genreadme.dirrocha.com/")}}>
           <div className="flex flex-col">
-            <h1 className="font-semibold md:mt-5 md:m-auto px-2">Minhas Ferramentas 📦</h1>
-            <span className="text-sm px-2">Tecnologias que utilizo no dia a dia para construir soluções eficientes e escaláveis.</span>
+            <h1 className="font-semibold md:mt-5 md:m-auto px-2">Gerador readme 📦</h1>
+            <span className="text-sm px-2">Tecnologia que que utilizo no dia a dia para construir readme de maneira rapida e pratica.</span>
           </div>
           <img src="/icons/lego.png" className="w-20 h-20 mr-3 mt-5 md:mb-5" alt="" />
           </div>
