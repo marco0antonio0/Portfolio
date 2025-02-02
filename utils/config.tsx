@@ -30,6 +30,14 @@ export const link_linkedln = "https://www.linkedin.com/in/marco-antonio-aa302423
 // 
 export const storiesData = [
   {
+    "title": "🚀 Portfolio - Site portfolio em poucos cliques 🌐",
+    "description": "Um site portifolio clean e de facil configuração, desenvolvido com Next.js e utilizando Docker para deploy.",
+    "link": "https://github.com/marco0antonio0/Portfolio",
+    "image": "https://github.com/marco0antonio0/Portfolio/raw/main/image/Captura%20de%20tela%20de%202025-02-01%2021-19-52.png",
+    "author": "marco0antonio0",
+    "date": "January 2024"
+  },
+  {
     "title": "GENReadme.js - Gerador de README.md 🌐",
     "description": "Um site inovador que gera arquivos README.md automaticamente, desenvolvido com Next.js e utilizando Docker para deploy.",
     "link": "https://github.com/marco0antonio0/GENReadme.js",
