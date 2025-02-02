@@ -3,13 +3,54 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a; 
+  --foreground: #ededed;
+}
+
+@property --gradient-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 180deg;
+}
+
+@keyframes gradient-rotate {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: 360deg; }
+}
+
+@layer utilities {
+
+  .border-gradient {
+    position: relative;
+    border-radius: 8px; /* Ajuste conforme necessário */
+    padding: 4px; /* Espaço interno para a borda */
+    background: transparent;
+    padding: 10px;
+  }
+
+  .border-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    padding: 2px; /* Tamanho da borda */
+    background: conic-gradient(from var(--gradient-angle), #ff00ff, #00ffff, #ff00ff);
+    animation: gradient-rotate 4s linear infinite;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0a0a0a; 
     --foreground: #ededed;
   }
 }
@@ -25,3 +66,4 @@ body {
     text-wrap: balance;
   }
 }
+
