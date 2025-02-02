@@ -23,7 +23,7 @@
 
 export const github_user = 'marco0antonio0'
 export const nome = 'Marco Antonio'
-export const link_linkedln = "www.linkedin.com/in/marco-antonio-aa3024233"
+export const link_linkedln = "https://www.linkedin.com/in/marco-antonio-aa3024233"
 
 
 // ==================================================================
