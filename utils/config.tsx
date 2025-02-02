@@ -33,7 +33,7 @@ export const storiesData = [
     "title": "GENReadme.js - Gerador de README.md 🌐",
     "description": "Um site inovador que gera arquivos README.md automaticamente, desenvolvido com Next.js e utilizando Docker para deploy.",
     "link": "https://github.com/marco0antonio0/GENReadme.js",
-    "image": "https://private-user-images.githubusercontent.com/72234855/408834034-7f8aa552-5b30-4a12-9911-beefcb34522e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzg0NTUxNTIsIm5iZiI6MTczODQ1NDg1MiwicGF0aCI6Ii83MjIzNDg1NS80MDg4MzQwMzQtN2Y4YWE1NTItNWIzMC00YTEyLTk5MTEtYmVlZmNiMzQ1MjJlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjAyVDAwMDczMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTU5ZjNmMGQxNzQ5OWY5OTAwZTlkMGViNGY3NzdlYTY3MTgzYTNmMDVkNDRiNmRiYjk4Y2JlMTkzNGI3OWY3MWImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.mqOCaVTWy-WSRG8Q8_3MvkJ527ytAfs5Qps186ZdCaQ",
+    "image": "",
     "author": "marco0antonio0",
     "date": "January 2024"
   },
