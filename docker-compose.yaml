@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3099:3000"
+      - "3098:3000"
     restart: always
     volumes:
       - ./:/app
