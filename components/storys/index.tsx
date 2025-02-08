@@ -16,6 +16,11 @@ interface Story {
     return (
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-6">Projetos</h2>
+        {stories.length==0 ? (
+            <div className="flex flex-row justify-center items-center w-20 h-20 ml-5">
+              <div className="w-12 h-12 border-8 m-auto  border-gray-600 border-t-white rounded-full animate-spin"></div>
+            </div>
+          ) : 
         <div className="flex flex-wrap gap-6 justify-center">
           {stories.map((story, index) => (
             <div 
@@ -40,7 +45,7 @@ interface Story {
               </a>
             </div>
           ))}
-        </div>
+        </div>}
       </div>
     );
   };

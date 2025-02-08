@@ -6,6 +6,7 @@ import { StoriesList } from "@/components/storys";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { fetchData } from "@/utils/fetchData";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,58 +29,9 @@ interface GitHubData {
 export default function Home() {
   const r = useRouter()
   const [storiesData,setStoriesData] = useState([])
-  const fetchData = async()=>{
-    const url = "https://cms-portfolio.dirrocha.com/api/projeto"
-    await fetch(url).then(e=>e.json()).then((e)=>{
-    const data = e.data.map((response:any)=>{
-      const d: any = response.formattedData;
-      
-      // Verifique se d.date existe e é uma string válida antes de prosseguir
-      if (!d?.data || typeof d.data !== "string") {
-          console.error("Data inválida ou não definida:", d?.data);
-          return {
-              title: d?.titulo ?? "",
-              description: d?.breve_descricao ?? "",
-              link: d?.link ?? "",
-              image: d?.image ?? "",
-              author: "marco0antonio0",
-              date: "",
-          };
-      }
-      
-      const [year, month, day] = d.data.split("-").map(Number);
-      
-      // Criar a data corretamente (mês é zero-based em JavaScript)
-      const date = new Date(Date.UTC(year, month - 1, day));
-      
-      const meses = [
-          "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-          "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-      ];
-      
-      let formattedDate: string = "";
-      
-      if (!isNaN(date.getTime())) {
-          formattedDate = `${meses[date.getMonth()]} ${date.getFullYear()}`;
-      } else {
-          console.error("Data inválida após conversão:", d.date);
-      }
-      
-      return {
-          title: d.titulo,
-          description: d.breve_descricao,
-          link: d.link,
-          image: d.image,
-          author: "marco0antonio0",
-          date: formattedDate
-      };
-    })
-    setStoriesData(data)
-    
-    })
-  }
+
   useEffect(()=>{
-    fetchData()
+    fetchData(setStoriesData)
   },[])
 
   return (
