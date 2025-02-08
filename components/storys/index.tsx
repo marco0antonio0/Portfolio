@@ -24,7 +24,6 @@ interface Story {
             >
               <a href={story.link} target="_blank" rel="noopener noreferrer">
                 <img src={story.image.length>0?story.image:"/github-cover.jpg"} alt={story.title} className="w-full h-48 object-cover" />
-              </a>
               <div className="p-4">
                 <h3 className="text-xl font-semibold">{story.title}</h3>
                 <p className="text-gray-500 text-sm">{story.date}</p>
@@ -38,6 +37,7 @@ interface Story {
                   <span className="font-bold">{story.author}</span>
                 </div>
               </div>
+              </a>
             </div>
           ))}
         </div>
