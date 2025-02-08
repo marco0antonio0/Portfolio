@@ -105,7 +105,7 @@ export default function Home() {
         {/* ===================================================================================================== */}
         </div>
         
-        <div className="flex flex-row">
+        <div className="flex flex-row w-[100%]">
         <StoriesList stories={storiesData} />
         </div>
         

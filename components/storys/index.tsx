@@ -13,14 +13,23 @@ interface Story {
   }
   
   export const StoriesList: React.FC<StoriesProps> = ({ stories }) => {
+    if(stories.length==0){
+      return (
+        <div className="max-w-6xl flex flex-col w-[100%] h-auto">
+        <h2 className="text-3xl font-bold mb-6">Projetos</h2>
+            <div className="flex flex-row w-[100%]">
+              <div className="flex flex-row m-auto w-20 h-20">
+                <div className="w-12 h-12 border-8 m-auto  border-gray-600 border-t-white rounded-full animate-spin"></div>
+              </div>
+            </div>
+        </div>
+      ) 
+    }
+    
     return (
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-6">Projetos</h2>
-        {stories.length==0 ? (
-            <div className="flex flex-row justify-center items-center w-20 h-20 ml-5">
-              <div className="w-12 h-12 border-8 m-auto  border-gray-600 border-t-white rounded-full animate-spin"></div>
-            </div>
-          ) : 
+         
         <div className="flex flex-wrap gap-6 justify-center">
           {stories.map((story, index) => (
             <div 
@@ -45,7 +54,7 @@ interface Story {
               </a>
             </div>
           ))}
-        </div>}
+        </div>
       </div>
     );
   };
