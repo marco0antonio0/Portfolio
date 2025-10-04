@@ -6,10 +6,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "3011:3000"
     networks:
       - proxy
+    ports:
+      - "3011:3000"
   
 networks:
   proxy:
