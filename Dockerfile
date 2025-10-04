@@ -1,31 +1,32 @@
-# Etapa de build
+# Usa a imagem oficial do Node.js
 FROM node:18-alpine AS builder
 
+# Define o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copia apenas os arquivos de dependência e instala
-COPY package*.json ./
+# Copia os arquivos de dependência
+COPY package.json package-lock.json ./ 
+
+# Instala as dependências
 RUN npm install
 
-# Copia o restante do código
+# Copia os arquivos do projeto para dentro do container
 COPY . .
 
-# Gera o build de produção
+# Constrói a aplicação Next.js
 RUN npm run build
 
-# Etapa final: imagem enxuta
+# Segunda etapa para um container mais leve
 FROM node:18-alpine
 
+# Define o diretório de trabalho
 WORKDIR /app
 
-# Copia apenas arquivos necessários do build
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
+# Copia os arquivos construídos da primeira etapa
+COPY --from=builder /app .
 
-# Expõe a porta padrão
+# Expõe a porta utilizada pelo Next.js
 EXPOSE 3000
 
-# Comando de start
+# Comando para rodar a aplicação
 CMD ["npm", "start"]
